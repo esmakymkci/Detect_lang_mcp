@@ -1,0 +1,72 @@
+name: detectlanguage-mcp
+version: "1.0.0"
+description: "MCP for language detection using DetectLanguage API"
+
+# MCP Configuration
+mcp:
+  name: detectlanguage-mcp
+  description: "Language detection service using DetectLanguage.com API"
+  version: "1.0.0"
+  
+# Server Configuration
+server:
+  entrypoint: server.py
+  port: 5000
+  host: "0.0.0.0"
+  
+# Environment Variables
+environment:
+  DETECTLANGUAGE_API_KEY: "ba3b71e93a655b554f1df2f4b2b1e82b"
+  FLASK_ENV: "production"
+  PORT: "5000"
+  HOST: "0.0.0.0"
+
+# Dependencies
+dependencies:
+  - Flask==2.3.3
+  - requests==2.31.0
+  - detectlanguage==1.5.0
+
+# Docker Configuration
+docker:
+  image: "detectlanguage-mcp"
+  tag: "latest"
+  dockerfile: "Dockerfile"
+  ports:
+    - "5000:5000"
+
+# API Endpoints
+endpoints:
+  - path: "/"
+    method: "GET"
+    description: "API information and usage"
+    
+  - path: "/health"
+    method: "GET"
+    description: "Health check endpoint"
+    
+  - path: "/detect"
+    methods: ["GET", "POST"]
+    description: "Detect language of provided text"
+    parameters:
+      - name: "text"
+        type: "string"
+        required: true
+        description: "Text to analyze for language detection"
+
+# Capabilities
+capabilities:
+  - language_detection
+  - text_analysis
+  - api_integration
+
+# Metadata
+metadata:
+  author: "DetectLanguage MCP"
+  license: "MIT"
+  repository: "local"
+  tags:
+    - "language-detection"
+    - "nlp"
+    - "text-analysis"
+    - "api"
