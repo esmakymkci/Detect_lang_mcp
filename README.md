@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/esmakymkci-detect-lang-mcp-badge.png)](https://mseep.ai/app/esmakymkci-detect-lang-mcp)
+
 # DetectLanguage MCP
 
 Bu proje, DetectLanguage.com API'sini kullanarak metin dil algılama işlemi yapan bir MCP (Model Context Protocol) servisidir.
